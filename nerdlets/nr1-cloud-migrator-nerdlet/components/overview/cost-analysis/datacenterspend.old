@@ -1,0 +1,113 @@
+  <Grid.Row
+                style={{ display: datacenterDocs.length > 0 ? '' : 'none' }}
+              >
+                <Grid.Column>
+                  <Header as="h3" content="Datacenter Spend" />
+
+                  {datacenterDocs.map((doc, i) => {
+                    return (
+                      <div key={i}>
+                        <Header
+                          as="h4"
+                          content={datacenterWorkloads[i].name.replace(
+                            'Datacenter: ',
+                            ''
+                          )}
+                        />
+
+                        {Object.keys(doc.costs).map((ct, z) => {
+                          if (!doc.costs[ct].length === 0) return '';
+                          return (
+                            <React.Fragment key={z}>
+                              <span style={{ fontSize: '14px' }}>{ct}</span>
+                              <Table size="small" compact>
+                                <Table.Header>
+                                  <Table.Row>
+                                    <Table.HeaderCell
+                                      style={{
+                                        ...nrTableHeaderCell,
+                                        width: '200px'
+                                      }}
+                                    >
+                                      Name
+                                    </Table.HeaderCell>
+                                    <Table.HeaderCell style={nrTableHeaderCell}>
+                                      Description
+                                    </Table.HeaderCell>
+                                    <Table.HeaderCell
+                                      style={nrTableHeaderCell}
+                                      textAlign="right"
+                                    >
+                                      Units
+                                    </Table.HeaderCell>
+                                    <Table.HeaderCell
+                                      textAlign="right"
+                                      style={{
+                                        ...nrTableHeaderCell,
+                                        width: '125px'
+                                      }}
+                                    >
+                                      Unit Rate
+                                    </Table.HeaderCell>
+                                    <Table.HeaderCell
+                                      textAlign="right"
+                                      style={{
+                                        ...nrTableHeaderCell,
+                                        width: '125px'
+                                      }}
+                                    >
+                                      PA Cost
+                                    </Table.HeaderCell>
+                                    <Table.HeaderCell
+                                      textAlign="right"
+                                      style={{
+                                        ...nrTableHeaderCell,
+                                        width: '100px'
+                                      }}
+                                    >
+                                      Period
+                                    </Table.HeaderCell>
+                                  </Table.Row>
+                                </Table.Header>
+
+                                <Table.Body>
+                                  {doc.costs[ct].map((cost, y) => {
+                                    return (
+                                      <React.Fragment key={y}>
+                                        <Table.Row>
+                                          <Table.Cell>{cost.title}</Table.Cell>
+                                          <Table.Cell>
+                                            {cost.description}
+                                          </Table.Cell>
+                                          <Table.Cell textAlign="right">
+                                            {cost.units}
+                                          </Table.Cell>
+                                          <Table.Cell textAlign="right">
+                                            $
+                                            {(
+                                              parseFloat(cost.rate) || 0
+                                            ).toFixed(2)}
+                                          </Table.Cell>
+                                          <Table.Cell textAlign="right">
+                                            $
+                                            {(cost.rate * cost.units).toFixed(
+                                              2
+                                            )}
+                                          </Table.Cell>
+                                          <Table.Cell textAlign="right">
+                                            {cost.selectedPeriod}
+                                          </Table.Cell>
+                                        </Table.Row>
+                                      </React.Fragment>
+                                    );
+                                  })}
+                                </Table.Body>
+                              </Table>
+                            </React.Fragment>
+                          );
+                        })}
+                      </div>
+                    );
+                  })}
+                </Grid.Column>
+              </Grid.Row>

@@ -1,0 +1,7 @@
+{
+  "schemaType": "LAUNCHER",
+  "id": "nr1-cloud-migrator-launcher",
+  "description": "Cloud Migrator",
+  "displayName": "Nimbus",
+  "rootNerdletId": "nr1-cloud-migrator-nerdlet"
+}

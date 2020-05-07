@@ -67,14 +67,16 @@ export default class LiveSpend extends React.PureComponent {
     return snapshots.filter(s => {
       const wl = pluckWorkload(s.document.srcWorkloadGuid);
 
-      for (let z = 0; z < Object.keys(tags).length; z++) {
-        const group = Object.keys(tags)[z];
-        for (let y = 0; y < Object.keys(tags[group]).length; y++) {
-          const item = Object.keys(tags[group])[y];
-          const value = tags[group][item];
-          if (value) {
-            if (getTagValue(wl.tags, group) === item) {
-              return true;
+      if (wl) {
+        for (let z = 0; z < Object.keys(tags).length; z++) {
+          const group = Object.keys(tags)[z];
+          for (let y = 0; y < Object.keys(tags[group]).length; y++) {
+            const item = Object.keys(tags[group])[y];
+            const value = tags[group][item];
+            if (value) {
+              if (getTagValue(wl.tags, group) === item) {
+                return true;
+              }
             }
           }
         }

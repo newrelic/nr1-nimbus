@@ -169,7 +169,7 @@ export default class DetectedWorkloads extends React.PureComponent {
     let guidStr = '';
     const guids = val.entities.map(entity => entity.split(', ')[0]);
     guids.forEach(guid => {
-      if (guid !== 'Other') {
+      if (guid !== 'Other' && guid !== 'null') {
         guidStr += `"${guid}",`;
       }
     });
@@ -312,10 +312,10 @@ export default class DetectedWorkloads extends React.PureComponent {
                         >
                           {val.entities.map((entity, i) => {
                             const split = entity.split(', ');
-                            if (split.length !== 3)
+                            if (split.length !== 3 || split[0] === 'null')
                               return <React.Fragment key={i} />;
                             return (
-                              <React.Fragment key={split[0]}>
+                              <React.Fragment key={`${split[0]}.${i}`}>
                                 <a
                                   onClick={() =>
                                     navigation.openStackedEntity(split[0])

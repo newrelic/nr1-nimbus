@@ -120,7 +120,7 @@ export const infraSampleBatchQuery = (guids, timePeriod) => `{
 
 export const createWorkloadDatacenter = (accountId, dcLocation) => {
   return gql`mutation {
-      workloadCreate(accountId: ${accountId}, workload: {entitySearchQueries: {name: "Datacenter Location", query: "(name like '${dcLocation}' or id = '${dcLocation}' or domainId = '${dcLocation}') and \`tags.accountId\` = '${accountId}'"}, name: "Datacenter: ${dcLocation}"}) {
+      workloadCreate(accountId: ${accountId}, workload: {entitySearchQueries: {query: "(name like '${dcLocation}' or id = '${dcLocation}' or domainId = '${dcLocation}') and \`tags.accountId\` = '${accountId}'"}, name: "Datacenter: ${dcLocation}"}) {
         id
         name
         guid

@@ -173,7 +173,13 @@ export default class MigrateWorkloads extends React.PureComponent {
                                 <Table.Cell width={7}>
                                   &nbsp;&nbsp;&nbsp;
                                   <span style={{ verticalAlign: 'bottom' }}>
-                                    {workload.name}
+                                    <a
+                                      href={`https://one.newrelic.com/redirect/entity/${workload.guid}`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      {workload.name}
+                                    </a>
                                   </span>
                                   <Button
                                     circular
@@ -197,7 +203,14 @@ export default class MigrateWorkloads extends React.PureComponent {
                                 <Table.Cell width={7}>
                                   {tgtWorkload ? (
                                     <>
-                                      {tgtWorkload.name}
+                                      <a
+                                        href={`https://one.newrelic.com/redirect/entity/${tgtWorkload.guid}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        {tgtWorkload.name}
+                                      </a>
+
                                       <Button
                                         circular
                                         size="mini"

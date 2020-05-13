@@ -220,7 +220,7 @@ export default class MigrationOverview extends React.PureComponent {
                                   <Table.HeaderCell
                                     style={{ textAlign: 'right' }}
                                   >
-                                    <a
+                                    {/* <a
                                       onClick={() =>
                                         window.open(
                                           workload.permalink,
@@ -229,18 +229,22 @@ export default class MigrationOverview extends React.PureComponent {
                                       }
                                     >
                                       SRC
+                                    </a> */}
+                                    <a
+                                      href={workload.permalink}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      SRC
                                     </a>
                                   </Table.HeaderCell>
                                   <Table.HeaderCell
                                     style={{ textAlign: 'right' }}
                                   >
                                     <a
-                                      onClick={() =>
-                                        window.open(
-                                          tgtWorkload.permalink,
-                                          '_blank'
-                                        )
-                                      }
+                                      href={tgtWorkload.permalink}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
                                     >
                                       TGT
                                     </a>

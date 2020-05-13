@@ -12,7 +12,9 @@ import {
   Button,
   Form,
   Checkbox,
-  Segment
+  Segment,
+  Table,
+  Icon
 } from 'semantic-ui-react';
 import AceEditor from 'react-ace';
 
@@ -287,7 +289,7 @@ export default class VMwareSetup extends React.Component {
                       <Message.Item
                         style={{ display: showConfig ? '' : 'none' }}
                       >
-                        Copy the above "vmware-config.yml" into the
+                        Copy the above "vsphere-config.yml" into the
                         "/etc/newrelic-infra/integrations.d/" folder off your
                         VM.
                       </Message.Item>
@@ -332,6 +334,20 @@ export default class VMwareSetup extends React.Component {
                       </Button>
                     </Message.List>
                   </Message>
+                  <Table>
+                    <Table.Body>
+                      <Table.Row>
+                        <Table.Cell colSpan={12}>
+                          <span>
+                            <Icon color="blue" name="info" />
+                            &nbsp; When returning to the main UI after adding a
+                            datacenter, click "Refresh" to ensure the datacenter
+                            is available.
+                          </span>
+                        </Table.Cell>
+                      </Table.Row>
+                    </Table.Body>
+                  </Table>
                 </Grid.Column>
               </Grid.Row>
             </Grid>

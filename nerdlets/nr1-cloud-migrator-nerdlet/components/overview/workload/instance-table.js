@@ -87,12 +87,9 @@ export default class InstanceTable extends React.PureComponent {
               <Header as="h4">
                 No entities reporting. Add entities to your{' '}
                 <a
-                  onClick={() =>
-                    window.open(
-                      ` https://one.newrelic.com/redirect/entity/${selectedMigration.guid}`,
-                      '_blank'
-                    )
-                  }
+                  href={`https://one.newrelic.com/redirect/entity/${selectedMigration.guid}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   workload.
                 </a>

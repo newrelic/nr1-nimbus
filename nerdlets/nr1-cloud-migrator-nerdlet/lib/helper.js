@@ -19,6 +19,8 @@ export const simpleEntityType = entityType => {
       return 'GENERIC INFRA';
     case 'INFRASTRUCTURE_AWS_LAMBDA_FUNCTION_ENTITY':
       return 'AWS LAMBDA';
+    case 'VSPHEREHOST':
+      return 'VSPHERE HOSTS';
     case 'VSPHEREVM':
       return 'VSPHERE VMS';
     default:

@@ -243,6 +243,16 @@ export default class WorkloadOverview extends React.PureComponent {
           const optimizedCfgEnabled =
             (selected.optimizationConfig || {}).enable || false;
 
+          let hostCount = 0;
+          if (((migrationData || {}).entityProgressNumeric || {}).src || null) {
+            hostCount +=
+              migrationData.entityProgressNumeric.src
+                .INFRASTRUCTURE_HOST_ENTITY || 0;
+            // hostCount +=
+            //   migrationData.entityProgressNumeric.src.VSPHEREHOST || 0;
+            hostCount += migrationData.entityProgressNumeric.src.VSPHEREVM || 0;
+          }
+
           return (
             <Grid>
               <Grid.Row>
@@ -496,10 +506,8 @@ export default class WorkloadOverview extends React.PureComponent {
                   <Statistic.Group>
                     {/* filter to hosts and vms */}
                     <Statistic horizontal size="small">
-                      <Statistic.Value>
-                        {selected.data.entityData.length}
-                      </Statistic.Value>
-                      <Statistic.Label>Entities</Statistic.Label>
+                      <Statistic.Value>{hostCount}</Statistic.Value>
+                      <Statistic.Label>Hosts</Statistic.Label>
                     </Statistic>
 
                     <Statistic horizontal size="small">

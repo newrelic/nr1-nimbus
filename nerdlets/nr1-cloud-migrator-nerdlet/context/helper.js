@@ -272,9 +272,11 @@ export const getInstancePrice = (
 ) => {
   return new Promise(async resolve => {
     const pricing = cloudPrices[cloud][region];
-    for (let z = 0; z < pricing.products.length; z++) {
-      if (pricing.products[z].type === instanceType) {
-        resolve(pricing.products[z]);
+    if (pricing) {
+      for (let z = 0; z < (pricing.products || []).length; z++) {
+        if (pricing.products[z].type === instanceType) {
+          resolve(pricing.products[z]);
+        }
       }
     }
 

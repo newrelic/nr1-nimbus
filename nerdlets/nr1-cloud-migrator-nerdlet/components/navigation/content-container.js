@@ -10,6 +10,7 @@ import MigrationTracker from '../migrate/migration-tracker';
 import MigrationPerformance from '../migrate/performance/migration-performance';
 import CostAnalysis from '../overview/cost-analysis/cost-analysis';
 import TagCompliance from '../tag-compliance/tag-compliance';
+import ComplexityProfiler from '../complexity-profiler';
 import { Segment } from 'semantic-ui-react';
 
 export default class ContentContainer extends React.PureComponent {
@@ -42,6 +43,8 @@ export default class ContentContainer extends React.PureComponent {
                 return <CostAnalysis />;
               case 'tagCompliance':
                 return <TagCompliance />;
+              case 'complexityProfiler':
+                return <ComplexityProfiler />;
               default:
                 return selectedPage;
             }

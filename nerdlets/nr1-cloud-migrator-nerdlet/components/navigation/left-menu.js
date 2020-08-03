@@ -66,6 +66,11 @@ export default class LeftMenu extends React.PureComponent {
                     'migrateWorkloads',
                     'cloud upload'
                   )}
+                  {menuItem(
+                    'Complexity Profiling',
+                    'complexityProfiler',
+                    'sitemap'
+                  )}
                 </Menu.Menu>
               </Menu.Item>
 

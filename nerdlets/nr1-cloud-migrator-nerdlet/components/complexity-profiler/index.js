@@ -9,13 +9,38 @@ import {
   Message,
   Dropdown,
   Table,
-  Icon
+  Icon,
+  Button
 } from 'semantic-ui-react';
 import { DataConsumer } from '../../context/data';
-import { NerdGraphQuery, navigation } from 'nr1';
+import { NerdGraphQuery, NerdGraphMutation, navigation } from 'nr1';
 import { chunk } from '../../lib/helper';
 import gql from 'graphql-tag';
-import { nerdGraphQuery } from '../../../shared/lib/utils';
+import { nerdGraphQuery, deleteWorkload } from '../../../shared/lib/utils';
+import { toast } from 'react-toastify';
+
+toast.configure();
+
+const loadingMsg = msg => (
+  <>
+    <Icon name="spinner" loading />
+    {msg}
+  </>
+);
+
+const successMsg = msg => (
+  <>
+    <Icon name="check" />
+    {msg}
+  </>
+);
+
+const errorMsg = msg => (
+  <>
+    <Icon name="delete" />
+    {msg}
+  </>
+);
 
 const relationshipQuery = accountId => `{
   actor {
@@ -73,11 +98,74 @@ const entityQuery = guids => `{
 export default class ComplexityProfile extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { complexityResults: [], loading: false };
+    this.state = {
+      complexityResults: [],
+      loading: false,
+      selectedAccount: null
+    };
   }
 
+  createWorkload = async (val, dataFetcher) => {
+    toast.info(loadingMsg('Adding new workload...'), {
+      autoClose: false,
+      containerId: 'B',
+      toastId: 'addWorkload'
+    });
+
+    console.log(val);
+
+    const { selectedAccount } = this.state;
+
+    let guidStr = '';
+    const guids = val.guids.map(entity => entity.split(', ')[0]);
+    guids.forEach(guid => {
+      if (guid !== 'Other' && guid !== 'null') {
+        guidStr += `"${guid}",`;
+      }
+    });
+    guidStr = guidStr.slice(0, -1);
+
+    const mutationQuery = `mutation {
+      workloadCreate(accountId: ${selectedAccount}, workload: {entityGuids: [${guidStr}], name: "${val.name} - ComplexityProfile: ${val.score}"}) {
+        name
+        id
+        guid
+      }
+    }`;
+
+    const createWorkloadResult = await NerdGraphMutation.mutate({
+      mutation: mutationQuery
+    });
+
+    if (
+      createWorkloadResult &&
+      createWorkloadResult.data &&
+      createWorkloadResult.data.workloadCreate
+    ) {
+      toast.update('addWorkload', {
+        autoClose: 3000,
+        type: toast.TYPE.SUCCESS,
+        containerId: 'B',
+        render: successMsg('Workload added.')
+      });
+    } else {
+      toast.update('addWorkload', {
+        autoClose: 3000,
+        type: toast.TYPE.ERROR,
+        containerId: 'B',
+        render: errorMsg('Failed to add workload.')
+      });
+    }
+    await dataFetcher(['workloads']);
+  };
+
+  delete = async (wl, dataFetcher) => {
+    await deleteWorkload(wl);
+    await dataFetcher(['workloads']);
+  };
+
   handleAccountChange = (e, d) => {
-    this.setState({ loading: true }, () => {
+    this.setState({ loading: true, selectedAccount: d.value }, () => {
       NerdGraphQuery.query({
         query: gql`
           ${relationshipQuery(d.value)}
@@ -135,8 +223,9 @@ export default class ComplexityProfile extends React.PureComponent {
               });
 
               const summary = { ...e };
-              summary.uniqueTransactionNames =
-                e.nrdbQuery.results[0]['uniqueCount.name'];
+              summary.uniqueTransactionNames = e.nrdbQuery.results
+                ? e.nrdbQuery.results[0]['uniqueCount.name']
+                : 0;
               summary.targetSummary = targetSummary;
               summary.sourceSummary = sourceSummary;
               summary.relationshipsCount = e.relationships.length;
@@ -168,7 +257,7 @@ export default class ComplexityProfile extends React.PureComponent {
 
     return (
       <DataConsumer>
-        {({ accounts }) => {
+        {({ accounts, dataFetcher, workloads }) => {
           const accountOptions = accounts.map(acc => ({
             key: acc.id,
             text: acc.name,
@@ -187,7 +276,7 @@ export default class ComplexityProfile extends React.PureComponent {
                       resources required to migrate your services.
                     </Message.Header>
                     <Message.List>
-                      <Message.Item>Select Account</Message.Item>
+                      Select Account <br />
                       <Dropdown
                         className="singledrop"
                         placeholder="Select Account"
@@ -224,13 +313,27 @@ export default class ComplexityProfile extends React.PureComponent {
                       <Table.Row>
                         <Table.HeaderCell>Application</Table.HeaderCell>
                         <Table.HeaderCell>Associated Entities</Table.HeaderCell>
-                        <Table.HeaderCell>Score</Table.HeaderCell>
+                        <Table.HeaderCell style={{ textAlign: 'right' }}>
+                          Score
+                        </Table.HeaderCell>
+                        <Table.HeaderCell width="3"></Table.HeaderCell>
                       </Table.Row>
                     </Table.Header>
 
                     <Table.Body>
                       {complexityResults.map((r, i) => {
-                        console.log(r);
+                        let foundWorkload = null;
+                        for (let z = 0; z < workloads.length; z++) {
+                          if (
+                            workloads[z].name.startsWith(
+                              `${r.name} - ComplexityProfile:`
+                            )
+                          ) {
+                            foundWorkload = workloads[z];
+                            break;
+                          }
+                        }
+
                         return (
                           <Table.Row key={i}>
                             <Table.Cell
@@ -242,7 +345,34 @@ export default class ComplexityProfile extends React.PureComponent {
                               {r.name}
                             </Table.Cell>
                             <Table.Cell>{r.guids.length}</Table.Cell>
-                            <Table.Cell>{r.score}</Table.Cell>
+                            <Table.Cell style={{ textAlign: 'right' }}>
+                              {r.score}
+                            </Table.Cell>
+                            <Table.Cell>
+                              {foundWorkload ? (
+                                <Button
+                                  content="Delete workload"
+                                  icon="minus"
+                                  negative
+                                  size="mini"
+                                  floated="right"
+                                  onClick={() =>
+                                    this.delete(foundWorkload, dataFetcher)
+                                  }
+                                />
+                              ) : (
+                                <Button
+                                  content="Create workload"
+                                  icon="plus"
+                                  color="blue"
+                                  size="mini"
+                                  floated="right"
+                                  onClick={() =>
+                                    this.createWorkload(r, dataFetcher)
+                                  }
+                                />
+                              )}
+                            </Table.Cell>
                           </Table.Row>
                         );
                       })}

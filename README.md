@@ -23,40 +23,43 @@ If you don't have New Relic Agents installed and want to get going quickly, you 
 
 ## Getting started
 
-> Include a step-by-step procedure on how to get your app installed and deployed. The clone and deploy steps are similar across all apps. If your app has additional steps required to get started, include them here or in their own section.
+1. Add Nimbus to your New Relic accounts with the [New Relic Catalog](http://newrelic.com)
 
-1. Ensure that you have [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [NPM](https://www.npmjs.com/get-npm) installed. If you're unsure whether you have one or both of them installed, run the following commands. (If you have them installed, these commands return a version number; if not, the commands aren't recognized.)
-```bash
-git --version
-npm -v
-```
-2. Install the [NR1 CLI](https://one.newrelic.com/launcher/developer-center.launcher) by going to [the developer center](https://one.newrelic.com/launcher/developer-center.launcher), and following the instructions to install and set up your New Relic development environment. This should take about 5 minutes.
-3. Execute the following command to clone this repository and run the code locally against your New Relic data:
+2. Ensure you have all the data you need to compare workloads. The more telemetry you are acquiring from your legacy system the better the position you will be in to compare and contrast how your services operate in the cloud. 
 
-```bash
-nr1 nerdpack:clone -r https://github.com/newrelic/{{ NERDPACK_NAME }}.git
-cd {{ NERDPACK_NAME }}
-nr1 nerdpack:serve
-```
+2.1 Install New Relic Infrastructure and Application Runtime Agents in your legacy environment
 
-Visit [https://one.newrelic.com/?nerdpacks=local](https://one.newrelic.com/?nerdpacks=local) to launch your app locally.
+New Relic Agents provide telemetry allowing you to understand your non-cloud workload performance and capacity KPIs allowing you to make informed decisions for the resource allocation and performance expectations of your migrated services.   
 
-## Deploying this Nerdpack
+2.2 Install the [New Relic vSphere Infrastructure Integration](https://docs.newrelic.com/docs/integrations/host-integrations/host-integrations-list/vmware-vsphere-monitoring-integration)  
 
-> Include the necessary steps to deploy your app. Generally, you shouldn't need to change any of these steps.
+If your legacy services are running in Virtual Machines managed by vSphere, you can gather operational KPIs directly from vSphere and use those metrics to understand the performance and capacity constraints of your legacy systems. If you choose this method, take a look at the "Create Workloads from vSphere Networks" section below to get started.  
 
-Open a command prompt in the app's directory and run the following commands.
+2.3 Ensure [New Relic Cloud Integrations](https://docs.newrelic.com/docs/integrations/infrastructure-integrations/cloud-integrations) are enabled
 
-```bash
-# If you need to create a new uuid for the account to which you're deploying this app, use the following
-# nr1 nerdpack:uuid -g [--profile=your_profile_name]
-# to see a list of APIkeys / profiles available in your development environment, run nr1 credentials:list
-nr1 nerdpack:publish [--profile=your_profile_name]
-nr1 nerdpack:deploy [-c [DEV|BETA|STABLE]] [--profile=your_profile_name]
-nr1 nerdpack:subscribe [-c [DEV|BETA|STABLE]] [--profile=your_profile_name]
-```
+This will allow your migration target workloads to keep track of your Cloud services usage, and how those dependencies affect your migrated services.  
 
-Visit [https://one.newrelic.com](https://one.newrelic.com), and launch your app in New Relic.
+
+## Using Nimbus
+
+1. Load the Nimbus Launcher
+
+2. Set-up
+
+2.1 Datacenter Costs
+
+2.2 Create Workloads
+
+2.3 Migrate Workloads
+
+2.4 Complexity Profiling
+
+3. Ovweview
+
+3.1 Tag Filters
+
+3.2 Migration
+
 
 # Support
 

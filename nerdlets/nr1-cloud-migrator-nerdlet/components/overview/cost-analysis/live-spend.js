@@ -174,24 +174,39 @@ export default class LiveSpend extends React.PureComponent {
     if (days === 0) {
       // return single day
       const day = new Date(highestDate);
-      labels.push(
+      /* Replacing with YYYY.MM.DD format ....  labels.push(
         `${day.getDate()}/${day.getMonth() + 1}/${day.getFullYear()}`
+      ); */
+
+      labels.push(
+        `${day.getFullYear()}/${day.getMonth() + 1}/${day.getDate()}`
       );
+
+
       timestamps.push(highestDate);
     } else {
       for (let d = lowestDate; d <= highestDate; d += 86400000) {
         const day = new Date(d);
-        labels.push(
+        /* Replacing with YYYY.MM.DD format ....  labels.push(
           `${day.getDate()}/${day.getMonth() + 1}/${day.getFullYear()}`
+        ); */
+
+        labels.push(
+          `${day.getFullYear()}/${day.getMonth() + 1}/${day.getDate()}`
         );
         timestamps.push(d);
       }
     }
 
     const td = new Date();
-    labels.push(
+   /* Replacing with YYYY.MM.DD format .... labels.push(
       `Right Now - ${td.getDate()}/${td.getMonth() + 1}/${td.getFullYear()}`
     );
+    */
+
+   labels.push(
+    `Right Now - ${td.getFullYear()}/${td.getMonth() + 1}/${td.getDate()}`
+  );
 
     const sourceValuesCloudCost = [];
     const targetValuesCloudCost = [];
@@ -245,7 +260,7 @@ export default class LiveSpend extends React.PureComponent {
         yAxes: [
           {
             type: 'linear',
-            display: true,
+            display: false,
             position: 'right',
             id: 'y-axis-1',
             gridLines: {
@@ -329,7 +344,7 @@ export default class LiveSpend extends React.PureComponent {
           yAxisID: 'y-axis-2'
         },
         {
-          label: 'Project Cloud Spend',
+          label: 'Projected Cloud Spend',
           type: 'line',
           data: projectedCloudSpendValues,
           fill: false,

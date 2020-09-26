@@ -321,6 +321,7 @@ export const calculateMigrationData = (workloads, costPeriod) => {
 
   // any workload with a src or tgt guid is part of a migration
   for (let z = 0; z < workloads.length; z++) {
+
     const srcWorkloadGuid = getTagValue(workloads[z].tags, 'srcWorkloadGuid');
     const tgtWorkloadGuid = getTagValue(workloads[z].tags, 'tgtWorkloadGuid');
 
@@ -491,7 +492,7 @@ export const calculateMigrationData = (workloads, costPeriod) => {
             );
           }
 
-          if (cheapestExactMatch) {
+          if (cheapestExactMatch) {          
             migrationData.costs.projectedCloudCost +=
               cheapestExactMatch.onDemandPrice;
           } else if (cheapestNextMatch) {

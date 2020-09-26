@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, Table, Message } from 'semantic-ui-react';
+import { Grid, Header, Table, Message, Popup } from 'semantic-ui-react';
 import { DataConsumer } from '../../context/data';
 import { nrTableHeaderCell } from '../../css/style';
 import { navigation } from 'nr1';
@@ -63,12 +63,16 @@ export default class TagCompliance extends React.PureComponent {
                           <Table.HeaderCell style={nrTableHeaderCell}>
                             Instance
                           </Table.HeaderCell>
-                          <Table.HeaderCell style={nrTableHeaderCell}>
-                            Missing Tags
-                          </Table.HeaderCell>
+                          <Popup content='These tags are not found in the entities residing in your cloud service provider and are required for better tracking.' trigger={
+                            <Table.HeaderCell style={nrTableHeaderCell}>
+                              Missing Tags
+                            </Table.HeaderCell>
+                          } />
+                          <Popup content='These tags have been configured for the entity in your cloud service provider.' trigger={
                           <Table.HeaderCell style={nrTableHeaderCell}>
                             Current Tags
                           </Table.HeaderCell>
+                          } />
                         </Table.Row>
                       </Table.Header>
 

@@ -4,7 +4,7 @@ no-async-promise-executor: 0
 */
 
 import React from 'react';
-import { Statistic, Header, Grid, Segment } from 'semantic-ui-react';
+import { Statistic, Header, Grid, Segment, Popup } from 'semantic-ui-react';
 import { formatValue, getTagValue } from '../../../../shared/lib/utils';
 
 export default class CostOverview extends React.PureComponent {
@@ -98,7 +98,7 @@ export default class CostOverview extends React.PureComponent {
         <Grid.Column>
           <Segment color="orange" raised>
             <div style={{ padding: '10px' }}>
-              <Header as="h5">SOURCE</Header>
+            <Popup content='Current state summary of cloud source workload' trigger={<Header as="h5">SOURCE</Header>} />
               <div>
                 <Statistic.Group
                   horizontal
@@ -113,7 +113,7 @@ export default class CostOverview extends React.PureComponent {
         <Grid.Column>
           <Segment color="blue" raised>
             <div style={{ padding: '10px' }}>
-              <Header as="h5">TARGET</Header>
+            <Popup content='Current state summary of cloud target workload' trigger={<Header as="h5">TARGET</Header>} />
               <div>
                 <Statistic.Group
                   horizontal
@@ -128,7 +128,7 @@ export default class CostOverview extends React.PureComponent {
         <Grid.Column width="6">
           <Segment color="green" raised>
             <div style={{ padding: '10px' }}>
-              <Header as="h5">SUMMARY</Header>
+            <Popup content='Current state summary of migration, assumes best possible cost for spend calculation.' trigger={<Header as="h5">SUMMARY</Header>} />
               <div>
                 <Statistic.Group
                   horizontal
@@ -136,7 +136,7 @@ export default class CostOverview extends React.PureComponent {
                   items={[
                     {
                       key: 'cloudCost',
-                      label: 'Project Cloud Spend',
+                      label: 'Projected Cloud Spend',
                       value: `$${formatValue(
                         migrationData.costs.projectedCloudCost,
                         2
@@ -157,6 +157,7 @@ export default class CostOverview extends React.PureComponent {
                     Entities Migrated
                   </Statistic.Label>
                 </Statistic>
+              
                 <Statistic.Group
                   horizontal
                   size="mini"

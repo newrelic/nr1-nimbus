@@ -56,7 +56,7 @@ export default class LeftMenu extends React.PureComponent {
               }}
             >
               <Menu.Item>
-                <Menu.Header>Getting Started</Menu.Header>
+                <Menu.Header>Configuration</Menu.Header>
                 <Menu.Menu>
                   {menuItem('Setup', 'setup', 'cog')}
                   {menuItem('Datacenter Costs', 'datacenterCosts', 'server')}
@@ -75,7 +75,7 @@ export default class LeftMenu extends React.PureComponent {
               </Menu.Item>
 
               <Menu.Item>
-                <Menu.Header>Overview</Menu.Header>
+                <Menu.Header>Utilities</Menu.Header>
                 <Menu.Menu>
                   <Accordion
                     as={Menu}
@@ -116,7 +116,8 @@ export default class LeftMenu extends React.PureComponent {
                   </Accordion>
 
                   {menuItem('Migration', 'migrationOverview', 'cloud upload')}
-                  {menuItem('Cost Analysis', 'costAnalysis', 'chart line')}
+                  {menuItem('Cost Allocation', 'costAnalysis', 'chart line')}
+                
                 </Menu.Menu>
               </Menu.Item>
 
@@ -179,11 +180,16 @@ export default class LeftMenu extends React.PureComponent {
                   <Menu.Item style={{ paddingLeft: '25px' }}>
                     <Menu.Header>Run</Menu.Header>
                     <Menu.Menu>
-                      {menuItem(
+                  
+
+                      {/** Removing Cloud Optimize from Nimbus - to be implemented 
+                       * see https://github.com/newrelic/nr1-nimbus/issues/14
+                       *
+                       *  menuItem(
                         'Cloud Optimization',
                         'Install Cloud Optimize from the App Catalog.',
                         'cloud'
-                      )}
+                      ) */}
                       {menuItem('Tag Compliance', 'tagCompliance', 'tags')}
                     </Menu.Menu>
                   </Menu.Item>

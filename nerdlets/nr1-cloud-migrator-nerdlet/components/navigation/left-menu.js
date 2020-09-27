@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Icon, Accordion } from 'semantic-ui-react';
+import { Menu, Icon, Accordion, Popup } from 'semantic-ui-react';
 import { DataConsumer } from '../../context/data';
 import Tags from './tags';
 
@@ -76,7 +76,7 @@ export default class LeftMenu extends React.PureComponent {
 
               <Menu.Item>
                 <Menu.Header>Utilities</Menu.Header>
-                <Menu.Menu>
+                <Popup content='Select tags to limit the number of Workloads to explore.' trigger={<Menu.Menu>
                   <Accordion
                     as={Menu}
                     vertical
@@ -115,11 +115,11 @@ export default class LeftMenu extends React.PureComponent {
                     </Menu.Item>
                   </Accordion>
 
-                  {menuItem('Migration', 'migrationOverview', 'cloud upload')}
+                  {menuItem('Migration Status', 'migrationOverview', 'cloud upload')}
                   {menuItem('Cost Allocation', 'costAnalysis', 'chart line')}
                 
-                </Menu.Menu>
-              </Menu.Item>
+                </Menu.Menu> } />
+              </Menu.Item> 
 
               {selectedMigration ? (
                 <>

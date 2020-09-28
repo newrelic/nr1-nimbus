@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Icon, Accordion } from 'semantic-ui-react';
+import { Menu, Icon, Accordion, Popup } from 'semantic-ui-react';
 import { DataConsumer } from '../../context/data';
 import Tags from './tags';
 
@@ -56,7 +56,7 @@ export default class LeftMenu extends React.PureComponent {
               }}
             >
               <Menu.Item>
-                <Menu.Header>Getting Started</Menu.Header>
+                <Menu.Header>Configuration</Menu.Header>
                 <Menu.Menu>
                   {menuItem('Setup', 'setup', 'cog')}
                   {menuItem('Datacenter Costs', 'datacenterCosts', 'server')}
@@ -75,8 +75,8 @@ export default class LeftMenu extends React.PureComponent {
               </Menu.Item>
 
               <Menu.Item>
-                <Menu.Header>Overview</Menu.Header>
-                <Menu.Menu>
+                <Menu.Header>Utilities</Menu.Header>
+                <Popup content='Select tags to limit the number of Workloads to explore.' trigger={<Menu.Menu>
                   <Accordion
                     as={Menu}
                     vertical
@@ -115,10 +115,11 @@ export default class LeftMenu extends React.PureComponent {
                     </Menu.Item>
                   </Accordion>
 
-                  {menuItem('Migration', 'migrationOverview', 'cloud upload')}
-                  {menuItem('Cost Analysis', 'costAnalysis', 'chart line')}
-                </Menu.Menu>
-              </Menu.Item>
+                  {menuItem('Migration Status', 'migrationOverview', 'cloud upload')}
+                  {menuItem('Cost Allocation', 'costAnalysis', 'chart line')}
+                
+                </Menu.Menu> } />
+              </Menu.Item> 
 
               {selectedMigration ? (
                 <>
@@ -179,11 +180,16 @@ export default class LeftMenu extends React.PureComponent {
                   <Menu.Item style={{ paddingLeft: '25px' }}>
                     <Menu.Header>Run</Menu.Header>
                     <Menu.Menu>
-                      {menuItem(
+                  
+
+                      {/** Removing Cloud Optimize from Nimbus - to be implemented 
+                       * see https://github.com/newrelic/nr1-nimbus/issues/14
+                       *
+                       *  menuItem(
                         'Cloud Optimization',
                         'Install Cloud Optimize from the App Catalog.',
                         'cloud'
-                      )}
+                      ) */}
                       {menuItem('Tag Compliance', 'tagCompliance', 'tags')}
                     </Menu.Menu>
                   </Menu.Item>

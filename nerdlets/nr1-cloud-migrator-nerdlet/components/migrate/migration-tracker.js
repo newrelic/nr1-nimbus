@@ -110,6 +110,8 @@ export default class MigrationTracker extends React.PureComponent {
                             total) *
                           100;
                       }
+                      // format progress to 2 decimals
+                      progress = Math.round(progress * 100) / 100;
                       return (
                         <div key={i} style={{ marginBottom: '45px' }}>
                           <Progress

@@ -8,7 +8,7 @@
 
 Nimbus provides a framework to support your Cloud migration process though Plan >> Manage >> Run phases. Using [New Relic Workloads](https://docs.newrelic.com/docs/new-relic-one/use-new-relic-one/workloads/workloads-isolate-resolve-incidents-faster) it allows you to compose groups of Migration Entities and compare the initial and point in time state of the migration. 
 
-![Screenshot #1](docs/images/demo-nimbus-migration-tracker.png)
+![Screenshot #1](screenshots/demo-nimbus-migration-tracker.png)
 
 ## Open source license
 
@@ -23,7 +23,11 @@ If you don't have New Relic Agents installed and want to get going quickly, you 
 
 ## Getting started
 
-1. Add Nimbus to your New Relic accounts with the [New Relic Catalog](http://newrelic.com)
+1. Add Nimbus to your New Relic accounts with the [New Relic Catalog](http://newrelic.com). You can do this by finding the Nimbus App in the New Relic One catalog. Just click on the app
+![Screenshot #2](screenshots/nimbus_launcher.png)
+and select the accounts you want to grant access to via the Manage Access feature.
+![Screenshot #3](screenshots/manage-access.png)
+
 
 2. Ensure you have all the data you need to compare workloads. The more telemetry you are acquiring from your legacy system the better the position you will be in to compare and contrast how your services operate in the cloud. 
 

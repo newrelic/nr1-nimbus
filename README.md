@@ -24,8 +24,14 @@ If you don't have New Relic Agents installed and want to get going quickly, you 
 ## Getting started
 
 1. Add Nimbus to your New Relic accounts with the [New Relic Catalog](http://newrelic.com). You can do this by finding the Nimbus App in the New Relic One catalog. Just click on the app
+
+
 ![Screenshot #2](screenshots/nimbus_launcher.png)
+
+
 and select the accounts you want to grant access to via the Manage Access feature.
+
+
 ![Screenshot #3](screenshots/manage-access.png)
 
 
@@ -46,23 +52,9 @@ This will allow your migration target workloads to keep track of your Cloud serv
 
 ## Using Nimbus
 
-1. Load the Nimbus Launcher
+Nimbus provides a context rich UI to help guide you from telemetry acquisition through Migration validation. For a walkthrough of features please see [Nimbus walkthrough](docs/using-nimbus.md) document. 
 
-2. Set-up
-
-2.1 Datacenter Costs
-
-2.2 Create Workloads
-
-2.3 Migrate Workloads
-
-2.4 Complexity Profiling
-
-3. Ovweview
-
-3.1 Tag Filters
-
-3.2 Migration
+![Screenshot #4](screenshots/nimbus-load.png)
 
 
 # Support
@@ -73,12 +65,9 @@ We encourage you to bring your experiences and questions to the [Explorers Hub](
 
 ## Community
 
-> Work with the Explorer's Hub team to create a tag for your app, then update the link below.
-
 New Relic hosts and moderates an online forum where customers can interact with New Relic employees as well as other customers to get help and share best practices. Like all official New Relic open source projects, there's a related Community topic in the New Relic Explorers Hub. You can find this project's topic/threads here:
 
 https://discuss.newrelic.com/t/{{ APP_NAME }}
-*(Note: This URL is subject to change before GA)*
 
 ## Issues / enhancement requests
 

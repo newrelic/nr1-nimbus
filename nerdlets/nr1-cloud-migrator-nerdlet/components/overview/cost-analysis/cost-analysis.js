@@ -187,7 +187,7 @@ export default class CostAnalysis extends React.PureComponent {
                   <Grid>
                     <Grid.Row>
                       <Grid.Column style={{ paddingTop: '15px' }}>
-                        <Header as="h3" content="Cost Analysis" />
+                        <Header as="h3" content="Cost Allocation" />
 
                         <Message floating style={{ borderRadius: 0 }}>
                           <Message.Header>

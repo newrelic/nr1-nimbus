@@ -10,7 +10,7 @@
         "address": "opensource+nr1-nimbus@newrelic.com"
       },
       "community": {
-        "url": "https://discuss.newrelic.com/t/track-your-service-level-objectives-with-the-slo-r-nerdpack/90046"
+        "url": "https://discuss.newrelic.com/t/nr1-nimbus"
       }
     },
     "whatsNew": "\n - Inital release for Catalog."

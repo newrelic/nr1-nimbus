@@ -14,7 +14,7 @@ Nimbus provides a framework to support your Cloud migration process though Plan 
 
 This project is distributed under the [Apache 2 license](LICENSE).
 
-## What do you need to make this work?
+## Dependencies
 
 Nimbus works off your existing New Relic account data, using New Relic Workloads to model and track the entities in your pre and post migration contexts. To get the most out of Nimbus you will want to capture as much comparative telemetry from your pre and post migration workloads as possible. This means Infrastructure, APM, Browser, Synthetics, and [Cloud Integration](https://docs.newrelic.com/docs/integrations/infrastructure-integrations/cloud-integrations) Entities. 
 
@@ -52,7 +52,7 @@ and select the accounts you want to grant access to via the Manage Access featur
 
 ## Using Nimbus
 
-Nimbus provides a context rich UI to help guide you from telemetry acquisition through Migration validation. For a walkthrough of features please see [Nimbus walkthrough](docs/using-nimbus.md) document. 
+Nimbus provides a context rich UI to help guide you from telemetry acquisition through Migration validation. For a walkthrough of features please see [Nimbus walkthrough](catalog/documentation.md) document. 
 
 ![Screenshot #4](screenshots/nimbus-load.png)
 

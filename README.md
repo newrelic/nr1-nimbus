@@ -52,7 +52,7 @@ and select the accounts you want to grant access to via the Manage Access featur
 
 ## Using Nimbus
 
-Nimbus provides a context rich UI to help guide you from telemetry acquisition through Migration validation. For a walkthrough of features please see [Nimbus walkthrough](docs/using_nimbus.md) document. 
+Nimbus provides a context rich UI to help guide you from telemetry acquisition through Migration validation. For a walkthrough of features please see [Nimbus walkthrough](https://github.com/newrelic/nr1-nimbus/blob/main/docs/using-nimbus.md) document. 
 
 ![Screenshot #4](screenshots/nimbus-load.png)
 

@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/newrelic/nr1-nimbus/compare/v1.0.0...v1.0.1) (2020-10-05)
+
+
+### Bug Fixes
+
+* Update display name ([12124cb](https://github.com/newrelic/nr1-nimbus/commit/12124cbb9f0bb2ca745f1316b0ce6e88cdca8202))
+
 # 1.0.0 (2020-10-05)
 
 

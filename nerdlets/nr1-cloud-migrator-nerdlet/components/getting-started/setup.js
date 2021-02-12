@@ -8,8 +8,7 @@ import {
   Card,
   Image,
   Divider,
-  Icon,
-  Segment
+  Icon
 } from 'semantic-ui-react';
 import { navigation } from 'nr1';
 import awsLogo from '../../images/aws-logo.png';
@@ -42,11 +41,15 @@ export default class Setup extends React.PureComponent {
                 <Grid.Column style={{ paddingTop: '15px' }}>
                   <Header as="h3">Setup</Header>
                   <Message>
-                  Nimbus is a tool to help you migrate your Workloads to a cloud provider. To use Nimbus, you will need to create 
-                  two Workloads to track the migration: A Source Workload for all the entities you wish to migrate, and a Target 
-                  Workload where entities appear as they are migrated. Follow the instructions below to begin the process of telemetry 
-                  capture from your Source systems. As you begin using Nimbus you will also want to define Datacenter costs; this will 
-                  help you track the financial impact of your migration to the cloud.
+                    Nimbus is a tool to help you migrate your Workloads to a
+                    cloud provider. To use Nimbus, you will need to create two
+                    Workloads to track the migration: A Source Workload for all
+                    the entities you wish to migrate, and a Target Workload
+                    where entities appear as they are migrated. Follow the
+                    instructions below to begin the process of telemetry capture
+                    from your Source systems. As you begin using Nimbus you will
+                    also want to define Datacenter costs; this will help you
+                    track the financial impact of your migration to the cloud.
                   </Message>
                   <Message floating style={{ borderRadius: 0 }}>
                     <Message.Header style={{ paddingBottom: '5px' }}>

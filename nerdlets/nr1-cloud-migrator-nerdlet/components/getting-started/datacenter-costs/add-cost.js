@@ -6,7 +6,7 @@ import { writeEntityDocument } from '../../../../shared/lib/utils';
 const periods = Array.from(Array(61).keys());
 periods.shift();
 
-const periodOptions = periods.map((p) => ({
+const periodOptions = periods.map(p => ({
   key: p,
   text: p,
   value: p
@@ -97,9 +97,7 @@ export default class AddCost extends React.PureComponent {
     return (
       <DataConsumer>
         {({ datacenters, selectedDatacenter, dataFetcher }) => {
-          const dc = datacenters.filter(
-            (d) => d.name === selectedDatacenter
-          )[0];
+          const dc = datacenters.filter(d => d.name === selectedDatacenter)[0];
 
           return (
             <Modal

@@ -232,7 +232,7 @@ export default class ComplexityProfile extends React.PureComponent {
               summary.languages = [...new Set(languages)];
               summary.guids = [...new Set(guids)];
 
-              console.debug("summary obj", summary);
+              console.debug('summary obj', summary);
 
               summary.score =
                 summary.languages.length +
@@ -273,21 +273,19 @@ export default class ComplexityProfile extends React.PureComponent {
                   <Header as="h4" content="Complexity Profiler" />
 
                   <Message floating style={{ borderRadius: 0 }}>
-                  
-
                     <Message
-                     header='About'
-                     content='The complexity profiler scans the service entities within your account and assigns a 
+                      header="About"
+                      content="The complexity profiler scans the service entities within your account and assigns a 
                       score based on the number of service instance runtimes, diversity of runtime languages, 
-                      and the number of transactions per service.' 
+                      and the number of transactions per service."
                     />
 
                     <Message
-                     header='Actions'
-                     content='You can create a New Relic Workload directly from the complexity profiler. The Workload
+                      header="Actions"
+                      content='You can create a New Relic Workload directly from the complexity profiler. The Workload
                      you create will include all the Service entities identified in the corresponding row of the profiler. 
                      You can access the Workloads you create from the profiler in the "Migrate Workloads" page, or directly 
-                     in the Workloads UI.' 
+                     in the Workloads UI.'
                     />
                     <Message.List>
                       Select Account <br />
@@ -330,7 +328,7 @@ export default class ComplexityProfile extends React.PureComponent {
                         <Table.HeaderCell style={{ textAlign: 'right' }}>
                           Score
                         </Table.HeaderCell>
-                        <Table.HeaderCell width="3"></Table.HeaderCell>
+                        <Table.HeaderCell width="3" />
                       </Table.Row>
                     </Table.Header>
 

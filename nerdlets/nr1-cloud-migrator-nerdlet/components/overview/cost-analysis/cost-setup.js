@@ -1,5 +1,5 @@
 import React from 'react';
-import { Message, Form, Select, Table } from 'semantic-ui-react';
+import { Message, Select } from 'semantic-ui-react';
 import { CostConsumer } from '../../../context/cost';
 
 export default class CostSetup extends React.PureComponent {
@@ -10,8 +10,8 @@ export default class CostSetup extends React.PureComponent {
           updateCostContext,
           noMonths,
           compellingEventMonth,
-          completionMonth,
-          increasePercAfterComplete
+          completionMonth
+          // increasePercAfterComplete
         }) => {
           const totalMonths = 60;
           const totalMonthsOptions = [];
@@ -55,9 +55,9 @@ export default class CostSetup extends React.PureComponent {
                   <div style={labelStyle}>
                     How many months will your migration take?
                   </div>
-                  <div style={{ float: 'right' }}>
+                  <div style={{ display: 'grid', padding: '10px' }}>
                     <Select
-                      style={{ width: '100px' }}
+                      style={{ width: '75px' }}
                       fluid
                       options={howManyMonthsToComplete}
                       placeholder="Months"
@@ -73,9 +73,9 @@ export default class CostSetup extends React.PureComponent {
                   <div style={labelStyle}>
                     Over how many months will we observe your migration for?
                   </div>
-                  <div style={{ float: 'right' }}>
+                  <div style={{ display: 'grid', padding: '10px' }}>
                     <Select
-                      style={{ width: '100px' }}
+                      style={{ width: '75px' }}
                       fluid
                       options={totalMonthsOptions}
                       placeholder="Months"
@@ -92,9 +92,9 @@ export default class CostSetup extends React.PureComponent {
                     Select a month if a compelling event is taking place, eg.
                     hardware refresh?
                   </div>
-                  <div style={{ float: 'right' }}>
+                  <div style={{ display: 'grid', padding: '10px' }}>
                     <Select
-                      style={{ width: '100px' }}
+                      style={{ width: '75px' }}
                       fluid
                       options={compellingEventOptions}
                       placeholder="Months"

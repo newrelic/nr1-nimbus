@@ -101,9 +101,7 @@ export default class MigrateWorkloads extends React.PureComponent {
                             style={{ fontSize: '16px' }}
                             verticalAlign="middle"
                           >
-                            <Table.HeaderCell
-                              style={nrTableHeaderCell}
-                            ></Table.HeaderCell>
+                            <Table.HeaderCell style={nrTableHeaderCell} />
                             <Table.HeaderCell style={nrTableHeaderCell}>
                               Source
                             </Table.HeaderCell>

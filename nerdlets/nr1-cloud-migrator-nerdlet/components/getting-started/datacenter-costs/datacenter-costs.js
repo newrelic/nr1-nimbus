@@ -45,7 +45,7 @@ export default class DatacenterCosts extends React.PureComponent {
     };
   }
 
-  createDatacenter = (dataFetcher) => {
+  createDatacenter = dataFetcher => {
     this.setState({ creating: true }, () => {
       const { selectedAccount, datacenterName } = this.state;
       this.handleMutation(selectedAccount.value, datacenterName);
@@ -129,13 +129,13 @@ export default class DatacenterCosts extends React.PureComponent {
           dataFetcher
         }) => {
           const { datacenterName, selectedAccount, creating } = this.state;
-          const accountOptions = accounts.map((acc) => ({
+          const accountOptions = accounts.map(acc => ({
             key: acc.id,
             text: acc.name,
             value: acc.id
           }));
 
-          const dcOptions = datacenters.map((dc) => ({
+          const dcOptions = datacenters.map(dc => ({
             key: dc.name,
             text: dc.name.replace(/Datacenter:/g, ''),
             value: dc.name
@@ -143,13 +143,13 @@ export default class DatacenterCosts extends React.PureComponent {
 
           console.log(selectedDatacenter);
 
-          const costOptions = costTables.map((c) => ({
+          const costOptions = costTables.map(c => ({
             key: c,
             text: c,
             value: c
           }));
 
-          let dc = datacenters.filter((d) => d.name === selectedDatacenter);
+          let dc = datacenters.filter(d => d.name === selectedDatacenter);
           dc = dc[0] || null;
 
           const dcDoc = (((dc || {}).dcDoc || {})[0] || {}).document || null;
@@ -201,7 +201,7 @@ export default class DatacenterCosts extends React.PureComponent {
                       <Input
                         value={datacenterName}
                         placeholder="Datacenter Name"
-                        onChange={(e) =>
+                        onChange={e =>
                           this.setState({ datacenterName: e.target.value })
                         }
                       />

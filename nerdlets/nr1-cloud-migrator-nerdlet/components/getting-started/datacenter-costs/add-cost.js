@@ -143,7 +143,6 @@ export default class AddCost extends React.PureComponent {
                       <Dropdown
                         className="singledrop"
                         width="8"
-                        label=""
                         placeholder="Months"
                         search
                         selection

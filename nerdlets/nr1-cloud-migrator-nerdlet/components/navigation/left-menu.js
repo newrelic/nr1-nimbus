@@ -76,50 +76,62 @@ export default class LeftMenu extends React.PureComponent {
 
               <Menu.Item>
                 <Menu.Header>Utilities</Menu.Header>
-                <Popup content='Select tags to limit the number of Workloads to explore.' trigger={<Menu.Menu>
-                  <Accordion
-                    as={Menu}
-                    vertical
-                    style={{
-                      border: 'none',
-                      minHeight: '25px',
-                      paddingTop: '0px',
-                      paddingLeft: '0px',
-                      paddingBottom: '0px',
-                      boxShadow: 'none',
-                      fontSize: '15px'
-                    }}
-                  >
-                    <Menu.Item>
-                      <Accordion.Title
-                        active={activeIndex === 1}
-                        content={
-                          Object.keys(tagSelection).length === 0 &&
-                          workloads.length > 0 ? (
-                            <span>
-                              Tag Filters&nbsp;
-                              <Icon name="spinner" loading />{' '}
-                            </span>
-                          ) : (
-                            'Tag Filters'
-                          )
-                        }
-                        index={1}
-                        onClick={this.handleClick}
-                        style={{ paddingTop: '0px', paddingBottom: '0px' }}
-                      />
-                      <Accordion.Content
-                        active={activeIndex === 1}
-                        content={<Tags />}
-                      />
-                    </Menu.Item>
-                  </Accordion>
+                <Popup
+                  content="Select tags to limit the number of Workloads to explore."
+                  trigger={
+                    <Menu.Menu>
+                      <Accordion
+                        as={Menu}
+                        vertical
+                        style={{
+                          border: 'none',
+                          minHeight: '25px',
+                          paddingTop: '0px',
+                          paddingLeft: '0px',
+                          paddingBottom: '0px',
+                          boxShadow: 'none',
+                          fontSize: '15px'
+                        }}
+                      >
+                        <Menu.Item>
+                          <Accordion.Title
+                            active={activeIndex === 1}
+                            content={
+                              Object.keys(tagSelection).length === 0 &&
+                              workloads.length > 0 ? (
+                                <span>
+                                  Tag Filters&nbsp;
+                                  <Icon name="spinner" loading />{' '}
+                                </span>
+                              ) : (
+                                'Tag Filters'
+                              )
+                            }
+                            index={1}
+                            onClick={this.handleClick}
+                            style={{ paddingTop: '0px', paddingBottom: '0px' }}
+                          />
+                          <Accordion.Content
+                            active={activeIndex === 1}
+                            content={<Tags />}
+                          />
+                        </Menu.Item>
+                      </Accordion>
 
-                  {menuItem('Migration Status', 'migrationOverview', 'cloud upload')}
-                  {menuItem('Cost Allocation', 'costAnalysis', 'chart line')}
-                
-                </Menu.Menu> } />
-              </Menu.Item> 
+                      {menuItem(
+                        'Migration Status',
+                        'migrationOverview',
+                        'cloud upload'
+                      )}
+                      {menuItem(
+                        'Cost Allocation',
+                        'costAnalysis',
+                        'chart line'
+                      )}
+                    </Menu.Menu>
+                  }
+                />
+              </Menu.Item>
 
               {selectedMigration ? (
                 <>
@@ -180,8 +192,6 @@ export default class LeftMenu extends React.PureComponent {
                   <Menu.Item style={{ paddingLeft: '25px' }}>
                     <Menu.Header>Run</Menu.Header>
                     <Menu.Menu>
-                  
-
                       {/** Removing Cloud Optimize from Nimbus - to be implemented 
                        * see https://github.com/newrelic/nr1-nimbus/issues/14
                        *

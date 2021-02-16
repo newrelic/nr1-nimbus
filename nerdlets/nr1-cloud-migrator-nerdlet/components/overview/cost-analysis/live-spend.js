@@ -182,7 +182,6 @@ export default class LiveSpend extends React.PureComponent {
         `${day.getFullYear()}/${day.getMonth() + 1}/${day.getDate()}`
       );
 
-
       timestamps.push(highestDate);
     } else {
       for (let d = lowestDate; d <= highestDate; d += 86400000) {
@@ -199,14 +198,14 @@ export default class LiveSpend extends React.PureComponent {
     }
 
     const td = new Date();
-   /* Replacing with YYYY.MM.DD format .... labels.push(
+    /* Replacing with YYYY.MM.DD format .... labels.push(
       `Right Now - ${td.getDate()}/${td.getMonth() + 1}/${td.getFullYear()}`
     );
     */
 
-   labels.push(
-    `Right Now - ${td.getFullYear()}/${td.getMonth() + 1}/${td.getDate()}`
-  );
+    labels.push(
+      `Right Now - ${td.getFullYear()}/${td.getMonth() + 1}/${td.getDate()}`
+    );
 
     const sourceValuesCloudCost = [];
     const targetValuesCloudCost = [];

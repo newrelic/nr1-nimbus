@@ -63,16 +63,22 @@ export default class TagCompliance extends React.PureComponent {
                           <Table.HeaderCell style={nrTableHeaderCell}>
                             Instance
                           </Table.HeaderCell>
-                          <Popup content='These tags are not found in the entities residing in your cloud service provider and are required for better tracking.' trigger={
-                            <Table.HeaderCell style={nrTableHeaderCell}>
-                              Missing Tags
-                            </Table.HeaderCell>
-                          } />
-                          <Popup content='These tags have been configured for the entity in your cloud service provider.' trigger={
-                          <Table.HeaderCell style={nrTableHeaderCell}>
-                            Current Tags
-                          </Table.HeaderCell>
-                          } />
+                          <Popup
+                            content="These tags are not found in the entities residing in your cloud service provider and are required for better tracking."
+                            trigger={
+                              <Table.HeaderCell style={nrTableHeaderCell}>
+                                Missing Tags
+                              </Table.HeaderCell>
+                            }
+                          />
+                          <Popup
+                            content="These tags have been configured for the entity in your cloud service provider."
+                            trigger={
+                              <Table.HeaderCell style={nrTableHeaderCell}>
+                                Current Tags
+                              </Table.HeaderCell>
+                            }
+                          />
                         </Table.Row>
                       </Table.Header>
 

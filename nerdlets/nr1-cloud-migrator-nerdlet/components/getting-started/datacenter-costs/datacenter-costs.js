@@ -1,4 +1,4 @@
-/* eslint 
+/* eslint
 no-console: 0,
 no-async-promise-executor: 0
 */
@@ -232,7 +232,6 @@ export default class DatacenterCosts extends React.PureComponent {
                     <Message.List>
                       <Dropdown
                         className="singledrop"
-                        label="Select Datacenter"
                         placeholder="Select Datacenter"
                         search
                         selection
@@ -293,7 +292,6 @@ export default class DatacenterCosts extends React.PureComponent {
                           />
                           <Dropdown
                             className="singledrop"
-                            label="Select Cost Category"
                             placeholder="Select Cost Category"
                             search
                             selection

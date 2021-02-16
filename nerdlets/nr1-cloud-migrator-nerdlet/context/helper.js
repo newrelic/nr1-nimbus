@@ -1,4 +1,4 @@
-/* eslint 
+/* eslint
 no-console: 0,
 no-async-promise-executor: 0
 */
@@ -267,8 +267,8 @@ export const getInstancePrice = (
   cloud,
   instanceType,
   region,
-  cloudPrices,
-  optimizationConfig
+  cloudPrices
+  // optimizationConfig
 ) => {
   return new Promise(async resolve => {
     const pricing = cloudPrices[cloud][region];

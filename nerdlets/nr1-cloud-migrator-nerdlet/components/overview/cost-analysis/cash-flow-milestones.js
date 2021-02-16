@@ -4,14 +4,14 @@ import { Bar } from 'react-chartjs-2';
 import { Header } from 'semantic-ui-react';
 import { CostConsumer } from '../../../context/cost';
 
-const plugins = [
-  {
-    afterDraw: (chartInstance, easing) => {
-      const ctx = chartInstance.chart.ctx;
-      ctx.fillText('Custom graph draw', 100, 100);
-    }
-  }
-];
+// const plugins = [
+//   {
+//     afterDraw: (chartInstance, easing) => {
+//       const ctx = chartInstance.chart.ctx;
+//       ctx.fillText('Custom graph draw', 100, 100);
+//     }
+//   }
+// ];
 
 export default class CashFlowMilestones extends React.PureComponent {
   render() {

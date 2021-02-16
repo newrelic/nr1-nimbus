@@ -115,7 +115,7 @@ export default class CostTables extends React.PureComponent {
                               <Table.HeaderCell
                                 textAlign="right"
                                 style={{ ...nrTableHeaderCell, width: '50px' }}
-                              ></Table.HeaderCell>
+                              />
                             </Table.Row>
                           </Table.Header>
 

@@ -191,8 +191,7 @@ export default class CostAnalysis extends React.PureComponent {
 
                         <Message floating style={{ borderRadius: 0 }}>
                           <Message.Header>
-                            Summarized cost analysis for the targetted
-                            workloads.
+                            Summarized cost analysis for the targeted workloads.
                           </Message.Header>
                           <Message.List>
                             <Message.Item>
@@ -211,14 +210,14 @@ export default class CostAnalysis extends React.PureComponent {
 
                     <LiveSpend />
 
-                    {/* <Grid.Row columns="equal" style={{ paddingTop: '0px' }}>
+                    <Grid.Row columns="equal" style={{ paddingTop: '0px' }}>
                       <Grid.Column>
                         <Tab
                           menu={{ pointing: true, secondary: true }}
                           panes={panes}
                         />
                       </Grid.Column>
-                    </Grid.Row> */}
+                    </Grid.Row>
                   </Grid>
                 );
               }}

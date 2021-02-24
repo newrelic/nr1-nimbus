@@ -11,14 +11,14 @@
   "demotronId": " b469f7de-b329-4c1f-a3a2-718182fd5212",
   "dependencies": {
     "ace-builds": "^1.4.12",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.11.0",
     "lodash": "^4.17.20",
     "prop-types": "^15.6.2",
     "react-ace": "^8.0.0",
     "react-chartjs-2": "^2.10.0",
-    "react-select": "^3.0.8",
+    "react-select": "^3.1.0",
     "react-toastify": "^5.5.0",
     "semantic-ui-react": "^0.88.2"
   },

@@ -11,7 +11,7 @@
   "demotronId": " b469f7de-b329-4c1f-a3a2-718182fd5212",
   "dependencies": {
     "ace-builds": "^1.4.12",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.11.0",
     "lodash": "^4.17.20",

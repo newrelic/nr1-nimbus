@@ -10,17 +10,16 @@
   },
   "demotronId": " b469f7de-b329-4c1f-a3a2-718182fd5212",
   "dependencies": {
-    "ace-builds": "^1.4.8",
-    "chart.js": "^2.9.3",
-    "graphql": "^14.6.0",
-    "graphql-tag": "^2.10.3",
+   "ace-builds": "^1.4.8",
+   "chart.js": "^2.9.4",
+    "graphql": "^14.7.0",
+    "graphql-tag": "^2.11.0",
     "lodash": "^4.17.20",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
     "react-ace": "^8.0.0",
-    "react-chartjs-2": "^2.9.0",
+    "react-chartjs-2": "^2.11.1",
     "react-dom": "^16.13.1",
-    "react-select": "^3.0.8",
+    "react-select": "^3.2.0",
     "react-toastify": "^5.5.0",
     "semantic-ui-react": "^0.88.2"
   },
@@ -30,10 +29,12 @@
     "not dead"
   ],
   "devDependencies": {
-    "@newrelic/eslint-plugin-newrelic": "^0.3.0",
-    "eslint": "^6.6.0",
+    "@newrelic/eslint-plugin-newrelic": "^0.3.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "eslint": "^6.8.0",
     "prettier": "^1.19.1",
-    "@semantic-release/changelog": "^3.0.5",
-    "@semantic-release/git": "^7.0.18"
+    "react": "16.6.3",
+    "react-dom": "16.6.3"
   }
 }

@@ -1,4 +1,4 @@
-[![New Relic One Catalog Project header](https://github.com/newrelic/open-source-office/raw/master/examples/categories/images/New_Relic_One_Catalog_Project.png)](https://github.com/newrelic/open-source-office/blob//examples/categories/index.md#nr1-catalog)
+[![New Relic One Catalog Project header](https://github.com/newrelic/opensource-website/raw/master/src/images/categories/New_Relic_One_Catalog_Project.png)](https://opensource.newrelic.com/oss-category/#new-relic-one-catalog-project)
 
 # Nimbus
 
@@ -52,7 +52,7 @@ and select the accounts you want to grant access to via the Manage Access featur
 
 ## Using Nimbus
 
-Nimbus provides a context rich UI to help guide you from telemetry acquisition through Migration validation. For a walkthrough of features please see [Nimbus walkthrough](catalog/documentation.md) document. 
+Nimbus provides a context rich UI to help guide you from telemetry acquisition through Migration validation. For a walkthrough of features please see [Nimbus walkthrough](https://github.com/newrelic/nr1-nimbus/blob/main/docs/using-nimbus.md) document. 
 
 ![Screenshot #4](screenshots/nimbus-load.png)
 

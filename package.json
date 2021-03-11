@@ -14,7 +14,7 @@
    "chart.js": "^2.9.4",
     "graphql": "^14.7.0",
     "graphql-tag": "^2.11.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-ace": "^8.1.0",

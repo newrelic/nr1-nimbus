@@ -7,16 +7,7 @@ If you don't have New Relic Agents installed and want to get going quickly, you 
 
 ## Getting started
 
-1. Add Nimbus to your New Relic accounts with the [New Relic Catalog](http://newrelic.com). You can do this by finding the Nimbus App in the New Relic One catalog. Just click on the app
-
-
-![Screenshot #2](screenshots/nimbus_launcher.png)
-
-
-and select the accounts you want to grant access to via the Manage Access feature.
-
-
-![Screenshot #3](screenshots/manage-access.png)
+1. Add Nimbus to your New Relic accounts with the [New Relic Catalog](http://newrelic.com). You can do this by finding the Nimbus App in the New Relic One catalog. Just click on the app and select the accounts you want to grant access to via the Manage Access feature.
 
 
 2. Ensure you have all the data you need to compare workloads. The more telemetry you are acquiring from your legacy system the better the position you will be in to compare and contrast how your services operate in the cloud. 

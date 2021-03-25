@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/newrelic/nr1-nimbus/compare/v1.0.2...v1.0.3) (2021-03-25)
+
+
+### Bug Fixes
+
+* removes code of conduct ([8e3c1a6](https://github.com/newrelic/nr1-nimbus/commit/8e3c1a6b8cae3aac78eff06865bfce2851db5901))
+
 ## [1.0.2](https://github.com/newrelic/nr1-nimbus/compare/v1.0.1...v1.0.2) (2021-03-02)
 
 

@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/newrelic/nr1-nimbus/compare/v1.0.3...v1.0.4) (2021-05-07)
+
+
+### Bug Fixes
+
+* upgrade ace-builds from 1.4.8 to 1.4.12 ([c8e677e](https://github.com/newrelic/nr1-nimbus/commit/c8e677e1bc20932cd47b953e84bf6b429088e00c))
+* upgrade react-chartjs-2 from 2.9.0 to 2.11.1 ([6acf399](https://github.com/newrelic/nr1-nimbus/commit/6acf39944a03ab58f635f20e9cf9f99c7702c052))
+
 ## [1.0.3](https://github.com/newrelic/nr1-nimbus/compare/v1.0.2...v1.0.3) (2021-03-25)
 
 

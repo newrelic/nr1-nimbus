@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/newrelic/nr1-nimbus/compare/v1.0.5...v1.1.0) (2021-10-04)
+
+
+### Features
+
+* update semantic release with node ([1f4ed0e](https://github.com/newrelic/nr1-nimbus/commit/1f4ed0ee5525f8bacd421a807fc6ea06a70d6ae3))
+
 ## [1.0.5](https://github.com/newrelic/nr1-nimbus/compare/v1.0.4...v1.0.5) (2021-05-07)
 
 

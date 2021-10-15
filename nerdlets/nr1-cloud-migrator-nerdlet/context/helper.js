@@ -55,9 +55,9 @@ export const getKeySets = accountIds => {
 
     Promise.all(keySetPromises).then(values => {
       values.forEach((value, i) => {
-        keysetByAccount[
-          accountIds[i]
-        ] = value.data.raw.results[0].allKeys.filter(isCloudLabel);
+        keysetByAccount[accountIds[i]] = value.data.results[0].allKeys.filter(
+          isCloudLabel
+        );
       });
       resolve(keysetByAccount);
     });

@@ -93,8 +93,8 @@ export default class DetectedWorkloads extends React.PureComponent {
 
     await Promise.all(requestPromises).then(values => {
       values.forEach((val, i) => {
-        if (val.data && val.data.chart) {
-          val.data.chart.forEach(res => {
+        if (val.data) {
+          val.data.forEach(res => {
             const split = res.metadata.name.split(', ');
             if (split.length === 3 && split[1] !== 'null') {
               // avoids adding hypervisors

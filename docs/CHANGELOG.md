@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/newrelic/nr1-nimbus/compare/v1.1.0...v1.1.1) (2021-10-19)
+
+
+### Bug Fixes
+
+* remove deprecated platform parameters ([2ff46d4](https://github.com/newrelic/nr1-nimbus/commit/2ff46d454386d6570a832cc323167538baa80e8b))
+
 # [1.1.0](https://github.com/newrelic/nr1-nimbus/compare/v1.0.5...v1.1.0) (2021-10-04)
 
 

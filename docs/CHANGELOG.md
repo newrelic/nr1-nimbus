@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/newrelic/nr1-nimbus/compare/v1.1.1...v1.2.0) (2021-11-05)
+
+
+### Features
+
+* add catalog keywords and categoryTerms ([adb129c](https://github.com/newrelic/nr1-nimbus/commit/adb129c5dfc0bc65d5e121a57ba83d9ec6ef9d4c))
+
 ## [1.1.1](https://github.com/newrelic/nr1-nimbus/compare/v1.1.0...v1.1.1) (2021-10-19)
 
 

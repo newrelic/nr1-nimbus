@@ -2,6 +2,8 @@
     "tagline": "Lift and shift cloud migration",
     "repository": "https://github.com/newrelic/nr1-nimbus.git",
     "details": "Nimbus provides a framework to support your lift and shift Cloud migration process though Plan >> Manage >> Run phases. \nUsing New Relic Workloads it allows you to compose groups of Migration Entities and compare the initial and point in time state of the migration.",
+    "categoryTerms": ["infrastructure"],
+    "keywords": ["infrastructure"],
     "support": {
       "issues": {
         "url": "https://github.com/newrelic/nr1-nimbus/issues"

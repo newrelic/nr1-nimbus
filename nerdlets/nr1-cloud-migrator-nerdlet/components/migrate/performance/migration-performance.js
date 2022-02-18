@@ -169,7 +169,7 @@ const createChart = (q, accountId, type, entities) => {
       return (
         <LineChart
           style={{ width: '95%' }}
-          accountId={accountId}
+          accountIds={[accountId]}
           query={chartQuery}
         />
       );

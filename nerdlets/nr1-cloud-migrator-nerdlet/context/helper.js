@@ -47,7 +47,7 @@ export const getKeySets = accountIds => {
 
     const keySetPromises = accountIds.map(id =>
       NrqlQuery.query({
-        accountId: id,
+        accountIds: [id],
         query: 'SELECT keyset() FROM SystemSample',
         formatType: NrqlQuery.FORMAT_TYPE.RAW
       })

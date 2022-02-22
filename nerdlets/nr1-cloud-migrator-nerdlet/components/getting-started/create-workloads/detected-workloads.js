@@ -55,7 +55,7 @@ export default class DetectedWorkloads extends React.PureComponent {
 
   fetchDatacenterNetworks = async accountId => {
     const vmwareNetworksResult = await NrqlQuery.query({
-      accountId: accountId,
+      accountIds: [accountId],
       query: `FROM VSphereHostSample, VSphereVmSample  SELECT uniques(networkNameList) FACET datacenterLocation`
     });
 
@@ -83,7 +83,7 @@ export default class DetectedWorkloads extends React.PureComponent {
         requestTrack.push({ dc, nw, entities: [] });
         requestPromises.push(
           NrqlQuery.query({
-            accountId: accountId,
+            accountIds: [accountId],
             query: `SELECT 1 from VSphereVmSample FACET entityGuid, vmConfigName, hypervisorHostname WHERE datacenterLocation = '${dc}' AND networkNameList LIKE '%${nw}%' LIMIT MAX`
             // query: `SELECT 1 from VSphereVmSample, VSphereHostSample FACET entityGuid, vmConfigName, hypervisorHostname WHERE datacenterLocation = '${dc}' AND networkNameList LIKE '%${nw}%' LIMIT MAX`
           })

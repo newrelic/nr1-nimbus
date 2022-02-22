@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/newrelic/nr1-nimbus/compare/v1.2.0...v1.2.1) (2022-02-22)
+
+
+### Bug Fixes
+
+* app deprecations ([aead5a4](https://github.com/newrelic/nr1-nimbus/commit/aead5a45b7b32d0d2a7e1f11973c58fa467924b0))
+
 # [1.2.0](https://github.com/newrelic/nr1-nimbus/compare/v1.1.1...v1.2.0) (2021-11-05)
 
 
